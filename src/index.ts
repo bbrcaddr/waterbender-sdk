@@ -18,10 +18,10 @@
 // `wb` binds lazily to the app-provided runtime (window.$wb). Standalone, it
 // installs its own compatible runtime on first use.
 
-import { getClient } from './install'
-import type { WbClient } from './types'
+import { getClient } from './install.js'
+import type { WbClient } from './types.js'
 
-export { installRuntime, getClient, RUNTIME_SOURCE } from './install'
+export { installRuntime, getClient, RUNTIME_SOURCE } from './install.js'
 export type {
   WbRuntime,
   WbClient,
@@ -30,7 +30,7 @@ export type {
   Unsubscribe,
   EventHandler,
   ChangeHandler,
-} from './types'
+} from './types.js'
 
 /**
  * The default client. It is a lazy view over the runtime: the runtime is

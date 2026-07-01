@@ -1,5 +1,5 @@
-import { RUNTIME_SOURCE } from './runtime-source'
-import type { WbRuntime, WbClient } from './types'
+import { RUNTIME_SOURCE } from './runtime-source.js'
+import type { WbRuntime, WbClient } from './types.js'
 
 interface RuntimeHost {
   $wb?: WbRuntime
