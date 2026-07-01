@@ -1,0 +1,53 @@
+{
+  "name": "@waterbender/sdk",
+  "version": "0.1.0",
+  "description": "Full-JS client SDK for Waterbender apps — hook into application state, components, and events without blueprints.",
+  "type": "module",
+  "license": "MIT",
+  "homepage": "https://github.com/bbrcaddr/waterbender-sdk#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bbrcaddr/waterbender-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bbrcaddr/waterbender-sdk/issues"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "jsdom": "^29.1.1",
+    "typescript": "~6.0.2",
+    "vitest": "^4.1.9"
+  },
+  "keywords": [
+    "waterbender",
+    "sdk",
+    "low-code",
+    "ui-builder",
+    "blueprints"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}

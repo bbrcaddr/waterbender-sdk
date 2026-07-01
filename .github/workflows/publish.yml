@@ -1,0 +1,31 @@
+name: Publish to npm
+
+# Publishes the current package.json version to npm. Trigger by pushing a
+# version tag (the idiomatic flow: `npm version patch|minor|major` then
+# `git push --follow-tags`), or manually from the Actions tab.
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write # npm provenance
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org
+      - run: npm install
+      - run: npm run build
+      - run: npm test
+      # Requires an NPM_TOKEN repo secret (an npm "Automation" access token).
+      # Drop --provenance if your npm account/registry doesn't support it.
+      - name: Publish
+        run: npm publish --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
