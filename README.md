@@ -1,4 +1,4 @@
-# @waterbender/sdk
+# @waterbender-app/sdk
 
 The full-JS client for [Waterbender](../../) apps. Hook into **application
 state**, **components**, and **events** from plain JavaScript — no blueprints
@@ -29,8 +29,8 @@ a blueprint sets is observable from a script and vice‑versa.
 ## Install
 
 ```bash
-npm install @waterbender/sdk
-# or: pnpm add @waterbender/sdk   yarn add @waterbender/sdk
+npm install @waterbender-app/sdk
+# or: pnpm add @waterbender-app/sdk   yarn add @waterbender-app/sdk
 ```
 
 ## Two ways to use it
@@ -51,7 +51,7 @@ app‑provided runtime (`window.$wb`) if present, or installs its own compatible
 runtime on first use.
 
 ```js
-import { wb } from '@waterbender/sdk'
+import { wb } from '@waterbender-app/sdk'
 
 wb.component('save-btn').onClick(() => {
   const name = wb.component('name-input').value()
@@ -84,7 +84,7 @@ wb.state.watch('user', (name) => wb.component('greeting').text('Hi ' + name))
 ### Entry points
 
 ```js
-import { wb, getClient, installRuntime, RUNTIME_SOURCE } from '@waterbender/sdk'
+import { wb, getClient, installRuntime, RUNTIME_SOURCE } from '@waterbender-app/sdk'
 ```
 
 | Export | Description |
@@ -308,7 +308,7 @@ ctx.component(__self__)
 **Standalone (outside a Waterbender app)**
 
 ```js
-import { installRuntime } from '@waterbender/sdk'
+import { installRuntime } from '@waterbender-app/sdk'
 const wb = installRuntime(window)   // installs $wb on this window
 wb.component('root').text('Hello from the SDK')
 ```
@@ -319,7 +319,7 @@ Fully typed. `text()`/`value()`/`checked()`/`style()` are overloaded — no
 argument reads (returns a value), an argument writes (returns the handle):
 
 ```ts
-import { wb, type ComponentHandle } from '@waterbender/sdk'
+import { wb, type ComponentHandle } from '@waterbender-app/sdk'
 
 const h: ComponentHandle = wb.component('name')
 const current: string = h.value()          // getter

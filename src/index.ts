@@ -1,9 +1,9 @@
-// @waterbender/sdk — the full-JS client for Waterbender apps.
+// @waterbender-app/sdk — the full-JS client for Waterbender apps.
 //
 // Hook into application state, components, and events from a plain .js file,
 // no blueprints required:
 //
-//   import { wb } from '@waterbender/sdk'
+//   import { wb } from '@waterbender-app/sdk'
 //
 //   wb.component('save-btn').onClick(() => {
 //     const name = wb.component('name-input').value()

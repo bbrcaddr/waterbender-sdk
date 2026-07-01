@@ -1,5 +1,5 @@
 {
-  "name": "@waterbender/sdk",
+  "name": "@waterbender-app/sdk",
   "version": "0.1.0",
   "description": "Full-JS client SDK for Waterbender apps — hook into application state, components, and events without blueprints.",
   "type": "module",
